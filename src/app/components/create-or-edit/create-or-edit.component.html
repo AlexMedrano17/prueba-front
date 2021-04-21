@@ -1,0 +1,23 @@
+<form>
+    <div class="mb-3">
+        <label for="empName" class="form-label">Nombre</label>
+        <input type="text" [(ngModel)]="permission.empName" class="form-control" id="empName" name="empName">
+    </div>
+    <div class="mb-3">
+        <label for="empLastName" class="form-label">Apellidos</label>
+        <input type="text" [(ngModel)]="permission.empLastName" class="form-control" id="empLastName" name="empLastName">
+    </div>
+    <div class="mb-3">
+        <label for="pDate" class="form-label">Fecha</label>
+        <input type="date" [(ngModel)]="permission.pDate" class="form-control" id="pDate" name="pDate">
+    </div>
+    <div class="mb-3">
+        <label for="pType" class="form-label">Tipo de permiso</label>
+        <select [(ngModel)]="permission.pType" class="form-control" name="pType" id="pType">
+            <option value="0" selected disabled>Seleccione un tipo de permiso</option>
+            <option *ngFor="let item of permissionTypes" [value]="item.id">{{item.description}}</option>
+        </select>
+    </div>
+   
+    <button type="submit" class="btn btn-primary" (click)="SaveForm()">Enviar</button>
+</form>

@@ -1,0 +1,36 @@
+  <button class="btn btn-primary mb-4 float-right" routerLink="CreateOrEdit">Agregar</button>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Tipo</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of permissions">
+                <td>
+                    {{item.empName}}
+                </td> 
+                <td>
+                    {{item.empLastName}}
+                </td>
+                <td>
+                    {{item.pType}}
+                </td>
+                <td>
+                    {{item.pDate | date}}
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-sm mx-1" (click)="Delete(item.id)">D</button>
+                    <button class="btn btn-warning btn-sm mx-1" [routerLink]="['CreateOrEdit', item.id]">E</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+  
+
+
